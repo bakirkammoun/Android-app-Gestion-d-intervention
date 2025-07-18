@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_app"
+    tools:context="com.example.gestionintervention.InterventionsFragment">
+
+    <!-- LinearLayout pour les boutons -->
+    <LinearLayout
+        android:layout_marginRight="20dp"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="ExtraText"
+        android:id="@+id/fragment_container">
+
+        <!-- Bouton Client -->
+        <Button
+            android:id="@+id/buttonClient"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/colorcompDescLogin"
+            android:text="client"
+            android:textColor="#000000" />
+
+        <!-- Bouton Produits -->
+        <Button
+            android:id="@+id/buttonProduits"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/colorcompDescLogin"
+            android:text="produits"
+            android:textColor="#000000" />
+
+        <!-- Bouton Technicien -->
+        <Button
+            android:id="@+id/buttonTechnicien"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@color/colorcompDescLogin"
+            android:text="technicien"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+    <!-- ScrollView pour le reste du contenu -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="15dp"
+        android:fadingEdge="horizontal|vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/InterventionFrag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/titleIntervention"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/psn" />
+
+            <EditText
+                android:id="@+id/psn"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="20dp"
+                android:background="#FFFFFF"
+                android:inputType="text"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/matricule" />
+
+            <EditText
+                android:id="@+id/matricule"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="20dp"
+                android:background="#FFFFFF"
+                android:inputType="text"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lvcan" />
+
+            <EditText
+                android:id="@+id/lvcan"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="20dp"
+                android:background="#FFFFFF"
+                android:inputType="text"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sim" />
+
+            <EditText
+                android:id="@+id/sim"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="20dp"
+                android:background="#FFFFFF"
+                android:inputType="text"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/technicien" />
+
+            <EditText
+                android:id="@+id/nomTechnicien"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="20dp"
+                android:background="#FFFFFF"
+                android:inputType="text"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <Button
+                android:id="@+id/getLocationButton"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#1E8BE1"
+                android:text="@string/getLocation"
+                android:textColor="#000000" />
+
+            <EditText
+                android:id="@+id/currLocation"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="20dp"
+                android:background="#FFFFFF"
+                android:enabled="false"
+                android:inputType="text"
+                android:textColor="@color/colorcompDesc"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <Button
+                android:id="@+id/insertDataButton"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/colorcompDescLogin"
+                android:text="@string/insertData"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/myInterventions"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@color/colorcompDescLogin"
+                android:text="@string/myinterventions"
+                android:textColor="#FFFFFF" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

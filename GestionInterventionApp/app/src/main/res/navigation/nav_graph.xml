@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/SingupFragment">
+
+    <!-- Fragment Singup (Premier Fragment) -->
+    <fragment
+        android:id="@+id/SingupFragment"
+        android:name="com.example.gestionintervention.FirstFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first">
+
+        <!-- Action pour aller au LoginFragment -->
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/LoginFragment" />
+    </fragment>
+
+    <!-- Fragment Login -->
+    <fragment
+        android:id="@+id/LoginFragment"
+        android:name="com.example.gestionintervention.SecondFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_second">
+
+        <!-- Action pour aller à InterventionFrag -->
+        <action
+            android:id="@+id/action_LoginFragment_to_InterventionsFragment"
+            app:destination="@id/InterventionFrag" />
+
+        <!-- Action pour revenir à LoginFragment (auto-navigation pour boucles ou tests) -->
+        <action
+            android:id="@+id/action_LoginFragment_to_LoginFragment"
+            app:destination="@id/LoginFragment"/>
+    </fragment>
+
+    <!-- Fragment Intervention (InterventionsFragment) -->
+    <fragment
+        android:id="@+id/InterventionFrag"
+        android:name="com.example.gestionintervention.InterventionsFragment"
+        android:label="@string/titleIntervention"
+        tools:layout="@layout/fragment_interventions">
+
+        <!-- Action pour revenir à ce même fragment (self navigation) -->
+        <action
+            android:id="@+id/action_InterventionFrag_self"
+            app:destination="@id/InterventionFrag" />
+
+        <!-- Action pour aller à userInteventionsFragment -->
+        <action
+            android:id="@+id/action_InterventionFrag_to_userInteventionsFragment"
+            app:destination="@id/userInteventionsFragment" />
+
+        <!-- Action pour aller à ClientFragment -->
+        <action
+            android:id="@+id/action_InterventionFrag_to_clientFragment"
+            app:destination="@id/clientFragment" />
+
+        <!-- Action pour aller à ProduitFragment -->
+        <action
+            android:id="@+id/action_InterventionFrag_to_produitFragment"
+            app:destination="@id/produitFragment" />
+
+        <!-- Action pour aller à TechnicienFragment -->
+        <action
+            android:id="@+id/action_InterventionFrag_to_technicienFragment"
+            app:destination="@id/technicienFragment" />
+    </fragment>
+
+    <!-- Fragment UserInterventions -->
+    <fragment
+        android:id="@+id/userInteventionsFragment"
+        android:name="com.example.gestionintervention.UserInteventionsFragment"
+        android:label="UserInteventionsFragment" >
+
+        <!-- Action pour revenir à InterventionFrag -->
+        <action
+            android:id="@+id/action_userInteventionsFragment_to_InterventionFrag"
+            app:destination="@id/InterventionFrag" />
+    </fragment>
+
+    <!-- Fragment Client -->
+    <fragment
+        android:id="@+id/clientFragment"
+        android:name="com.example.gestionintervention.ClientFragment"
+        android:label="Client"
+        tools:layout="@layout/client_fragment" />
+
+    <!-- Fragment Produit -->
+    <fragment
+        android:id="@+id/produitFragment"
+        android:name="com.example.gestionintervention.ProduitFragment"
+        android:label="Produit"
+        tools:layout="@layout/produit_fragment" />
+
+    <!-- Fragment Technicien -->
+    <fragment
+        android:id="@+id/technicienFragment"
+        android:name="com.example.gestionintervention.TechnicienFragment"
+        android:label="Technicien"
+        tools:layout="@layout/technicien_fragment" />
+</navigation>
